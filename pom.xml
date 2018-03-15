@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project
+        xmlns="http://maven.apache.org/POM/4.0.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <parent>
+        <groupId>grgr</groupId>
+        <artifactId>grgr-parent</artifactId>
+        <version>1</version>
+        <relativePath>../../_testing/grgr-parent</relativePath>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>grgr.customer</groupId>
+    <artifactId>ENTESB-7791-aries-pool</artifactId>
+    <packaging>pom</packaging>
+    <version>0.1.0.BUILD-SNAPSHOT</version>
+
+    <properties>
+        <!-- Versions -->
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+        </dependencies>
+    </dependencyManagement>
+
+    <modules>
+        <module>database</module>
+        <module>jpa</module>
+        <module>test</module>
+    </modules>
+
+</project>
