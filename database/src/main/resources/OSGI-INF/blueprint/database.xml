@@ -35,10 +35,11 @@
             <entry key="aries.xa.name" value="ccommerce_xa" />
             <entry key="aries.xa.pooling" value="true" />
             <entry key="aries.xa.poolMinSize" value="3" />
-            <entry key="aries.xa.poolMaxSize" value="10" />
+            <entry key="aries.xa.poolMaxSize" value="100" />
             <entry key="aries.xa.username" value="fuse" />
             <entry key="aries.xa.password" value="fuse" />
             <entry key="aries.xa.exceptionSorter" value="known" />
+            <entry key="aries.xa.connectionMaxWaitMilliseconds" value="120000" />
         </service-properties>
     </service>
 

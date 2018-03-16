@@ -58,6 +58,13 @@
             <version>0.1.0.BUILD-SNAPSHOT</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.apache.geronimo.components</groupId>
+            <artifactId>geronimo-transaction</artifactId>
+            <version>3.1.1</version>
+            <scope>provided</scope>
+        </dependency>
+
     </dependencies>
 
     <build>

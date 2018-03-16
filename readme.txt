@@ -3,6 +3,7 @@
 
 $ cd $FUSE_HOME
 $ echo <number> > data/test # where <number> is the number of threads to perform JPA query with XA transaction
+$ echo <number> > data/btest # (blueprint version with jpa:context and tx:transaction)
 
 
 == Logging

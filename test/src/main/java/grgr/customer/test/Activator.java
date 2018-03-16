@@ -161,11 +161,15 @@ public class Activator implements BundleActivator {
                 ut.begin();
 
                 em.joinTransaction();
-                Thread.sleep(RND.nextInt(500) + 300);
+                long t1 = System.currentTimeMillis();
                 List<User> users = em.createQuery("select u from User u", User.class).getResultList();
                 for (User u : users) {
-                    LOG.info(String.format(" - %d: %s", u.getId(), u.getName()));
+//                    LOG.info(String.format(" - %d: %s", u.getId(), u.getName()));
+                    u.getName();
                 }
+                int sleep = (RND.nextInt(5) + 3) * 100;
+                LOG.info(String.format(" -A- %03d: %04dms, (sleep = %03d)", this.nr, System.currentTimeMillis() - t1, sleep));
+                Thread.sleep(sleep);
 
                 ut.commit();
                 em.close();
