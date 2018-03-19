@@ -23,7 +23,8 @@
 
     <bean id="ccommerceDsXa" class="com.mysql.jdbc.jdbc2.optional.MysqlXADataSource">
         <property name="databaseName" value="fuse" />
-        <property name="url" value="jdbc:mysql://localhost:3306/fuse?zeroDateTimeBehavior=convertToNull&amp;characterSetResults=UTF-8&amp;autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false" />
+        <property name="url" value="jdbc:mysql://localhost:3306/fuse?zeroDateTimeBehavior=convertToNull&amp;characterSetResults=UTF-8&amp;autoReconnect=false&amp;useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false" />
+        <!--<property name="url" value="jdbc:mysql://localhost:3306/fuse?zeroDateTimeBehavior=convertToNull&amp;characterSetResults=UTF-8&amp;autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false" />-->
         <property name="user" value="fuse" />
         <property name="password" value="fuse" />
     </bean>
@@ -35,42 +36,44 @@
             <entry key="aries.xa.name" value="ccommerce_xa" />
             <entry key="aries.xa.pooling" value="true" />
             <entry key="aries.xa.poolMinSize" value="3" />
-            <entry key="aries.xa.poolMaxSize" value="100" />
+            <entry key="aries.xa.poolMaxSize" value="10" />
             <entry key="aries.xa.username" value="fuse" />
             <entry key="aries.xa.password" value="fuse" />
             <entry key="aries.xa.exceptionSorter" value="known" />
             <entry key="aries.xa.connectionMaxWaitMilliseconds" value="120000" />
+            <entry key="aries.xa.backgroundValidation" value="true" />
+            <entry key="aries.xa.backgroundValidationMilliseconds" value="10000" />
         </service-properties>
     </service>
 
-    <bean id="ccommerceDs" class="com.mysql.jdbc.jdbc2.optional.MysqlDataSource">
-        <property name="databaseName" value="fuse" />
-        <property name="url" value="jdbc:mysql://localhost:3306/fuse?zeroDateTimeBehavior=convertToNull&amp;characterSetResults=UTF-8&amp;autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false" />
-        <property name="user" value="fuse" />
-        <property name="password" value="fuse" />
-    </bean>
+    <!--<bean id="ccommerceDs" class="com.mysql.jdbc.jdbc2.optional.MysqlDataSource">-->
+        <!--<property name="databaseName" value="fuse" />-->
+        <!--<property name="url" value="jdbc:mysql://localhost:3306/fuse?zeroDateTimeBehavior=convertToNull&amp;characterSetResults=UTF-8&amp;autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false" />-->
+        <!--<property name="user" value="fuse" />-->
+        <!--<property name="password" value="fuse" />-->
+    <!--</bean>-->
 
-    <service interface="javax.sql.DataSource" ref="ccommerceDs">
-        <service-properties>
-            <entry key="osgi.jndi.service.name" value="jdbc/ds/ccommerce" />
-        </service-properties>
-    </service>
+    <!--<service interface="javax.sql.DataSource" ref="ccommerceDs">-->
+        <!--<service-properties>-->
+            <!--<entry key="osgi.jndi.service.name" value="jdbc/ds/ccommerce" />-->
+        <!--</service-properties>-->
+    <!--</service>-->
 
-    <bean id="ccommerceQuartzXaDs" class="com.mysql.jdbc.jdbc2.optional.MysqlXADataSource">
-        <property name="databaseName" value="fuse" />
-        <property name="url" value="jdbc:mysql://localhost:3306/fuse?zeroDateTimeBehavior=convertToNull&amp;characterSetResults=UTF-8&amp;autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false" />
-        <property name="user" value="fuse" />
-        <property name="password" value="fuse" />
-    </bean>
+    <!--<bean id="ccommerceQuartzXaDs" class="com.mysql.jdbc.jdbc2.optional.MysqlXADataSource">-->
+        <!--<property name="databaseName" value="fuse" />-->
+        <!--<property name="url" value="jdbc:mysql://localhost:3306/fuse?zeroDateTimeBehavior=convertToNull&amp;characterSetResults=UTF-8&amp;autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false" />-->
+        <!--<property name="user" value="fuse" />-->
+        <!--<property name="password" value="fuse" />-->
+    <!--</bean>-->
 
-    <service interface="javax.sql.XADataSource" ref="ccommerceQuartzXaDs">
-        <service-properties>
-            <entry key="osgi.jndi.service.name" value="jdbc/ds/ccommerce-quartz-xa" />
-            <entry key="aries.xa.name" value="ccommerce-quartz-xa" />
-            <entry key="aries.xa.pooling" value="true" />
-            <entry key="aries.xa.poolMinSize" value="3" />
-            <entry key="aries.xa.poolMaxSize" value="5" />
-        </service-properties>
-    </service>
+    <!--<service interface="javax.sql.XADataSource" ref="ccommerceQuartzXaDs">-->
+        <!--<service-properties>-->
+            <!--<entry key="osgi.jndi.service.name" value="jdbc/ds/ccommerce-quartz-xa" />-->
+            <!--<entry key="aries.xa.name" value="ccommerce-quartz-xa" />-->
+            <!--<entry key="aries.xa.pooling" value="true" />-->
+            <!--<entry key="aries.xa.poolMinSize" value="3" />-->
+            <!--<entry key="aries.xa.poolMaxSize" value="5" />-->
+        <!--</service-properties>-->
+    <!--</service>-->
 
 </blueprint>

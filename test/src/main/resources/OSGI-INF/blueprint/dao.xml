@@ -24,8 +24,8 @@
             http://www.osgi.org/xmlns/blueprint/v1.0.0 https://osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd">
 
     <bean id="dao" class="grgr.customer.test.Dao">
-        <jpa:context property="em" unitname="ccommerceCoreJpa" />
         <tx:transaction method="*" value="Required" />
+        <jpa:context property="em" unitname="ccommerceCoreJpa" />
     </bean>
 
     <bean id="client" class="grgr.customer.test.Client" init-method="start" destroy-method="stop">
